@@ -1,0 +1,45 @@
+{
+  "name": "points-mission-template",
+  "version": "1.0.0",
+  "description": "veikkaus points template for missions",
+  "main": "main.js",
+  "scripts": {
+    "dev": "webpack",
+    "build": "webpack --config webpack.production.config.js",
+    "deploy": "node deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jannehuo@bitbucket.org/jannehuo/veikkaus-points-content.git"
+  },
+  "author": "Richen",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/jannehuo/veikkaus-points-content#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-preset-env": "^1.6.1",
+    "expose-loader": "^0.7.4",
+    "ftp-deploy": "^1.2.2",
+    "lodash": "^4.17.10",
+    "webpack": "^3.8.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "css-loader": "^0.28.7",
+    "easytimer.js": "^2.0.3",
+    "ejs-loader": "^0.3.0",
+    "file-loader": "^1.1.11",
+    "json-loader": "^0.5.7",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "progressbar.js": "^1.0.1",
+    "rxjs": "^5.5.6",
+    "style-loader": "^0.19.0",
+    "url-loader": "^1.0.1"
+  }
+}
