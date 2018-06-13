@@ -62,6 +62,9 @@ const addUserBet = (e) => {
         showStatus(false)
       } else {
         showStatus(true)
+        playerScore = 0;
+        scoreList = []
+        userBets()
       }
     });
   }
