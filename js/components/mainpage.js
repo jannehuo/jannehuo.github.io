@@ -123,20 +123,29 @@ const checkScores = (data) => {
 }
 
 const checkBets = (match) => {
-  console.log(match)
-  if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
-    playerScore += points.match
-    scoreList.push(points.match)
-    return false;
+  if(match.score1 === match.score2 && convertToInt(match.bet.bet1) === convertToInt(match.bet.bet2)) {
+    if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
+      playerScore += points.match
+      scoreList.push(points.match)
+      return false;
+    }
   }
   if(match.score1 > match.score2 && convertToInt(match.bet.bet1) > convertToInt(match.bet.bet2)) {
-    playerScore += points.score
-    scoreList.push(points.score)
+    playerScore += points.match
+    scoreList.push(points.match)
+    if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
+      playerScore += points.score
+      scoreList.push(points.score)
+    }
     return false;
   }
   if(match.score2 > match.score1 && convertToInt(match.bet.bet2) > convertToInt(match.bet.bet1)) {
-    playerScore += points.score
-    scoreList.push(points.score)
+    playerScore += points.match
+    scoreList.push(points.match)
+    if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
+      playerScore += points.score
+      scoreList.push(points.score)
+    }
     return false;
   }
 }
