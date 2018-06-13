@@ -95,6 +95,14 @@ input {
   border: none;
   cursor: pointer;
   background-color: transparent;
+  transition: all 0.2s ease;
+  &--outlines {
+    border: 1px solid;
+  }
+  &:hover {
+    background-color: #333;
+    color: #f2f2f2;
+  }
 }
 
 .day {
@@ -133,4 +141,8 @@ input {
     background-color: red;
     opacity: 1;
   }
+}
+
+.padding-large-sides {
+  padding: 0 20px;
 }

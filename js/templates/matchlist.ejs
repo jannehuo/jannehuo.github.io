@@ -1,5 +1,5 @@
 <div class="mainpage">
-  <h2><%=data.name%></h2>
+  <h1><%=data.name%></h1>
   <div class="matchdays">
     <% _.each(data.rounds,function(round,i){ %>
     <div class="day">
@@ -13,13 +13,13 @@
               <p><%=match.date%> <%=match.time%></p>
             </div>
             <div class="container container--match-row">
-              <p><%=match.team1.name%></p>
-              <p class="align-right"><%=match.team2.name%></p>
+              <h2><%=match.team1.name%></h2>
+              <h2 class="align-right"><%=match.team2.name%></h2>
             </div>
             <form class='bettingform' data-match-index='<%=j%>' data-round-index='<%=i%>' data-match-num='<%=match.num%>'>
               <div class="container container--betting-row">
                 <input type="number" data-team='<%=match.team1.code%>' name='bet1' value='<%=match.bet !== undefined ? match.bet.bet1 : ""%>'>
-                <div class="align-center"><input type='submit' value='Add Bet' class="text-button" /></div>
+                <div class="align-center padding-large-sides"><input type='submit' value='Add Bet' class="text-button" /></div>
                 <input type="number" data-team='<%=match.team2.code%>' name='bet2' value='<%=match.bet !== undefined ? match.bet.bet2 : ""%>'>
               </div>
             </form>     
