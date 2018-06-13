@@ -124,9 +124,11 @@ const checkScores = (data) => {
 
 const checkBets = (match) => {
   if(match.score1 === match.score2 && convertToInt(match.bet.bet1) === convertToInt(match.bet.bet2)) {
+    playerScore += points.match
+    scoreList.push(points.match)
     if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
-      playerScore += points.match
-      scoreList.push(points.match)
+      playerScore += points.score
+      scoreList.push(points.score)
       return false;
     }
   }
