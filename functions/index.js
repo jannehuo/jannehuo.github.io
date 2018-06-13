@@ -15,7 +15,8 @@ exports.userData = functions.auth.user().onCreate((user) => {
   const userObj = {
     displayName:displayName,
     email:email,
-    userId:userId
+    userId:userId,
+    points: 0
   }
   console.log('OBJ' , userObj)
   return admin.database().ref('bets/' + userId).set(userObj);
