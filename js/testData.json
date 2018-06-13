@@ -16,8 +16,8 @@
             "name": "Saudi Arabia",
             "code": "KSA"
           },
-          "score1": null,
-          "score2": null,
+          "score1": 0,
+          "score2": 0,
           "score1i": null,
           "score2i": null,
           "group": "Group A",
@@ -45,8 +45,8 @@
             "name": "Uruguay",
             "code": "URU"
           },
-          "score1": null,
-          "score2": null,
+          "score1": 1,
+          "score2": 1,
           "score1i": null,
           "score2i": null,
           "group": "Group A",
@@ -69,8 +69,8 @@
             "name": "Spain",
             "code": "ESP"
           },
-          "score1": null,
-          "score2": null,
+          "score1": 3,
+          "score2": 1,
           "score1i": null,
           "score2i": null,
           "group": "Group B",
@@ -93,8 +93,8 @@
             "name": "Iran",
             "code": "IRN"
           },
-          "score1": null,
-          "score2": null,
+          "score1": 1,
+          "score2": 3,
           "score1i": null,
           "score2i": null,
           "group": "Group B",

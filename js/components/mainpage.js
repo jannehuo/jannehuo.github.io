@@ -1,8 +1,16 @@
-const matchUrl = 'https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.json'
+const dev = checkQueryString('dev');
+const matchUrl = dev ? '../js/testData.json' : 'https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.json'
 import axios from 'axios'
 import render from '../utils/render.js'
 import matchlist from '../templates/matchlist.ejs'
 let matchData;
+let playerScore = 0;
+let scoreList = []
+
+const points = {
+  'match': 2,
+  'score': 1
+}
 
 export default () => {
   loadMatchData()
@@ -63,7 +71,7 @@ const addUserBet = (e) => {
 
 const userBets = () => {
   const uid = sessionStorage.getItem('userid')
-  firebase.database().ref('bets/' + uid).on('value',(res) => {
+  firebase.database().ref('bets/' + uid).once('value',(res) => {
     combineMatchData(res.val())
   })
 }
@@ -80,6 +88,7 @@ const combineMatchData = (bets) => {
     })
   })
   renderMatchData(matchData)
+  checkScores(matchData)
 }
 
 const logout = (e) => {
@@ -100,4 +109,45 @@ const showStatus = (success) => {
     notification.classList.remove(statusClass)
     notification.innerHTML = ''
   },1500);
+}
+
+const checkScores = (data) => {
+  _.each(data.rounds,(round) => {
+    _.each(round.matches,(match) => {
+      if(match.bet && match.score1 !== null && match.score2 !== null) {
+        checkBets(match)
+      }
+    })
+  })
+  document.getElementById('user-score').innerHTML = playerScore + ' P'
+}
+
+const checkBets = (match) => {
+  console.log(match)
+  if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
+    playerScore += points.match
+    scoreList.push(points.match)
+    return false;
+  }
+  if(match.score1 > match.score2 && convertToInt(match.bet.bet1) > convertToInt(match.bet.bet2)) {
+    playerScore += points.score
+    scoreList.push(points.score)
+    return false;
+  }
+  if(match.score2 > match.score1 && convertToInt(match.bet.bet2) > convertToInt(match.bet.bet1)) {
+    playerScore += points.score
+    scoreList.push(points.score)
+    return false;
+  }
+}
+
+const convertToInt = (val) => {
+  return parseInt(val,10)
+}
+
+function checkQueryString(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  results = regex.exec(location.search);
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }

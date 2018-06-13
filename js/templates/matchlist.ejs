@@ -14,6 +14,9 @@
             </div>
             <div class="container container--match-row">
               <h2><%=match.team1.name%></h2>
+              <% if(match.score1 !== null && match.score2 !== null) { %>
+              <h2 class="align-center"><%=match.score1 + '-' + match.score2%></h2>
+              <% } %>
               <h2 class="align-right"><%=match.team2.name%></h2>
             </div>
             <form class='bettingform' data-match-index='<%=j%>' data-round-index='<%=i%>' data-match-num='<%=match.num%>'>
