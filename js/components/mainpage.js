@@ -6,6 +6,7 @@ let matchData;
 
 export default () => {
   loadMatchData()
+  document.getElementById('logout').addEventListener('click',logout,false)
 }
 
 const loadMatchData = () => {
@@ -73,4 +74,12 @@ const combineMatchData = (bets) => {
     })
   })
   renderMatchData(matchData)
+}
+
+const logout = (e) => {
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+  }).catch(function(error) {
+    // An error happened.
+  });
 }
