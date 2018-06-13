@@ -7,7 +7,8 @@
       <div class="matches">
         <% _.each(round.matches,function(match,j){ %>
           <div class="match">
-            <div class="container container--info-row">
+            <% var infoClass = match.bet ? 'bet-given' : ''; %>
+            <div class="container container--info-row <%=infoClass%>">
               <p><%=match.group%></p>
               <p><%=match.date%> <%=match.time%></p>
             </div>

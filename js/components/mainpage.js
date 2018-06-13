@@ -49,7 +49,13 @@ const addUserBet = (e) => {
   const emptyStrings = _.includes(_.values(object),"");
 
   if(!emptyStrings) {
-    firebase.database().ref('bets/' + uid + '/matches/' + matchnum).set(object);
+    firebase.database().ref('bets/' + uid + '/matches/' + matchnum).set(object,(err) => {
+      if(err) {
+        showStatus(false)
+      } else {
+        showStatus(true)
+      }
+    });
   }
 
   return false;
@@ -82,4 +88,16 @@ const logout = (e) => {
   }).catch(function(error) {
     // An error happened.
   });
+}
+
+const showStatus = (success) => {
+  const notification = document.getElementById('notification')
+  const statusClass = success ? 'success' : 'error'
+  const content = success ? 'Bet Added!' : 'Error try again!'
+  notification.classList.add(statusClass)
+  notification.innerHTML = content
+  setTimeout(() => {
+    notification.classList.remove(statusClass)
+    notification.innerHTML = ''
+  },1500);
 }
