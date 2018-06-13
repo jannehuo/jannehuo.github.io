@@ -1,9 +1,8 @@
 <div class="mainpage">
-  <h1><%=data.name%></h1>
   <div class="matchdays">
     <% _.each(data.rounds,function(round,i){ %>
     <div class="day">
-      <h3><%=round.name%></h3>
+      <h1><%=round.name%></h1>
       <div class="matches">
         <% _.each(round.matches,function(match,j){ %>
           <div class="match">
