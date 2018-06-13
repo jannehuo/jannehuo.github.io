@@ -7,7 +7,7 @@ var uglify = new webpack.optimize.UglifyJsPlugin({
 module.exports = {
     entry: ['./js/main.js'],
     output: {
-        filename: "mission_bundle.js",
+        filename: "site_bundle.js",
         path: __dirname + '/build'
     },
     devtool: "sourcemap",
