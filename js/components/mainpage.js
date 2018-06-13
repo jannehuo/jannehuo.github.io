@@ -119,7 +119,7 @@ const checkScores = (data) => {
       }
     })
   })
-  document.getElementById('user-score').innerHTML = playerScore + ' P'
+  saveUserScore(playerScore)
 }
 
 const checkBets = (match) => {
@@ -154,6 +154,17 @@ const checkBets = (match) => {
 
 const convertToInt = (val) => {
   return parseInt(val,10)
+}
+
+const saveUserScore = (score) => {
+  const uid = sessionStorage.getItem('userid')
+  firebase.database().ref('bets/' + uid + '/points/').set(score,(err) => {
+    if(err) {
+      console.log(err)
+    } else {
+      document.getElementById('user-score').innerHTML = playerScore + ' P'
+    }
+  });
 }
 
 function checkQueryString(name) {
