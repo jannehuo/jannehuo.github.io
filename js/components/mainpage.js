@@ -80,7 +80,14 @@ const userBets = () => {
 }
 
 const combineMatchData = (bets) => {
-  const betsList = _.compact(bets.matches)
+  let betsList;
+  if(_.isArray(bets.matches)) {
+    betsList = _.compact(bets.matches)
+  } else {
+    betsList = _.values(bets.matches)
+  }
+  
+  console.log(betsList)
   _.each(matchData.rounds,(round) => {
     _.each(round.matches,(match) => {
       _.each(betsList,(bet) => {
