@@ -1,0 +1,240 @@
+{
+  "bets" : {
+    "2zpBQ2oSTMbjhK36HdgSd4hHLDC3" : {
+      "displayName" : "Jen Lee",
+      "email" : "snowytrees182@gmail.com",
+      "matches" : {
+        "12" : {
+          "bet1" : "0",
+          "bet2" : "1",
+          "num" : "12"
+        },
+        "13" : {
+          "bet1" : "3",
+          "bet2" : "0",
+          "num" : "13"
+        },
+        "14" : {
+          "bet1" : "1",
+          "bet2" : "2",
+          "num" : "14"
+        },
+        "28" : {
+          "bet1" : "1",
+          "bet2" : "3",
+          "num" : "28"
+        },
+        "43" : {
+          "bet1" : "1",
+          "bet2" : "3",
+          "num" : "43"
+        }
+      },
+      "points" : 0,
+      "userId" : "2zpBQ2oSTMbjhK36HdgSd4hHLDC3"
+    },
+    "756Y4An6G1YWFvPnjANGd1HLW113" : {
+      "displayName" : "aki santaniemi",
+      "email" : "santanie@gmail.com",
+      "matches" : [ null, {
+        "bet1" : "1",
+        "bet2" : "0",
+        "num" : "1"
+      }, {
+        "bet1" : "2",
+        "bet2" : "1",
+        "num" : "2"
+      }, {
+        "bet1" : "1",
+        "bet2" : "1",
+        "num" : "3"
+      }, {
+        "bet1" : "1",
+        "bet2" : "0",
+        "num" : "4"
+      }, {
+        "bet1" : "3",
+        "bet2" : "1",
+        "num" : "5"
+      }, {
+        "bet1" : "0",
+        "bet2" : "1",
+        "num" : "6"
+      }, {
+        "bet1" : "3",
+        "bet2" : "0",
+        "num" : "7"
+      }, {
+        "bet1" : "1",
+        "bet2" : "1",
+        "num" : "8"
+      }, {
+        "bet1" : "3",
+        "bet2" : "1",
+        "num" : "9"
+      }, {
+        "bet1" : "1",
+        "bet2" : "2",
+        "num" : "10"
+      }, {
+        "bet1" : "1",
+        "bet2" : "0",
+        "num" : "11"
+      }, {
+        "bet1" : "2",
+        "bet2" : "0",
+        "num" : "12"
+      }, {
+        "bet1" : "2",
+        "bet2" : "0",
+        "num" : "13"
+      }, {
+        "bet1" : "0",
+        "bet2" : "2",
+        "num" : "14"
+      }, {
+        "bet1" : "1",
+        "bet2" : "2",
+        "num" : "15"
+      }, {
+        "bet1" : "2",
+        "bet2" : "1",
+        "num" : "16"
+      }, {
+        "bet1" : "1",
+        "bet2" : "1",
+        "num" : "17"
+      }, {
+        "bet1" : "2",
+        "bet2" : "0",
+        "num" : "18"
+      } ],
+      "points" : 0,
+      "userId" : "756Y4An6G1YWFvPnjANGd1HLW113"
+    },
+    "JIV34YwNEIblasF8R9SCB4A1zyr1" : {
+      "displayName" : "Jack Barnard",
+      "email" : "jackbarnard1988@gmail.com",
+      "matches" : [ null, {
+        "bet1" : "1",
+        "bet2" : "0",
+        "num" : "1"
+      }, {
+        "bet1" : "0",
+        "bet2" : "2",
+        "num" : "2"
+      }, {
+        "bet1" : "1",
+        "bet2" : "2",
+        "num" : "3"
+      }, {
+        "bet1" : "1",
+        "bet2" : "1",
+        "num" : "4"
+      }, {
+        "bet1" : "2",
+        "bet2" : "0",
+        "num" : "5"
+      }, {
+        "bet1" : "0",
+        "bet2" : "1",
+        "num" : "6"
+      }, {
+        "bet1" : "3",
+        "bet2" : "1",
+        "num" : "7"
+      }, {
+        "bet1" : "2",
+        "bet2" : "0",
+        "num" : "8"
+      } ],
+      "points" : 0,
+      "userId" : "JIV34YwNEIblasF8R9SCB4A1zyr1"
+    },
+    "aTGNh5aPuYeMWFDyz5upeHVIhTg1" : {
+      "displayName" : "Juhana Lähteenmäki",
+      "email" : "lahteenmaki.juhana@gmail.com",
+      "matches" : [ null, {
+        "bet1" : "0",
+        "bet2" : "0",
+        "num" : "1"
+      } ],
+      "points" : 0,
+      "userId" : "aTGNh5aPuYeMWFDyz5upeHVIhTg1"
+    },
+    "lL2EF2Rxw6VyH6crKIn2KJrNCs73" : {
+      "displayName" : "Okko Räsänen",
+      "email" : "ojrasanen@gmail.com",
+      "matches" : [ null, {
+        "bet1" : "3",
+        "bet2" : "0",
+        "num" : "1"
+      }, {
+        "bet1" : "0",
+        "bet2" : "4",
+        "num" : "2"
+      }, {
+        "bet1" : "1",
+        "bet2" : "2",
+        "num" : "3"
+      }, {
+        "bet1" : "2",
+        "bet2" : "1",
+        "num" : "4"
+      } ],
+      "points" : 0,
+      "userId" : "lL2EF2Rxw6VyH6crKIn2KJrNCs73"
+    },
+    "x9Vn9BtppoY7xYmb0Nmrnw2zdmH3" : {
+      "displayName" : "Janne H",
+      "email" : "jannehuo@gmail.com",
+      "matches" : [ null, {
+        "bet1" : "2",
+        "bet2" : "0",
+        "num" : "1"
+      }, {
+        "bet1" : "1",
+        "bet2" : "3",
+        "num" : "2"
+      }, {
+        "bet1" : "2",
+        "bet2" : "4",
+        "num" : "3"
+      }, {
+        "bet1" : "2",
+        "bet2" : "0",
+        "num" : "4"
+      }, {
+        "bet1" : "2",
+        "bet2" : "1",
+        "num" : "5"
+      }, {
+        "bet1" : "3",
+        "bet2" : "2",
+        "num" : "6"
+      }, {
+        "bet1" : "4",
+        "bet2" : "1",
+        "num" : "7"
+      }, {
+        "bet1" : "2",
+        "bet2" : "1",
+        "num" : "8"
+      }, {
+        "bet1" : "3",
+        "bet2" : "0",
+        "num" : "9"
+      }, {
+        "bet1" : "2",
+        "bet2" : "0",
+        "num" : "10"
+      }, {
+        "bet1" : "3",
+        "bet2" : "2",
+        "num" : "11"
+      } ],
+      "points" : 0,
+      "userId" : "x9Vn9BtppoY7xYmb0Nmrnw2zdmH3"
+    }
+  }
+}

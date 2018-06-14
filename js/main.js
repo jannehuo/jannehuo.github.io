@@ -30,17 +30,19 @@ const renderPageContainer = (user) => {
   document.getElementById('logout').addEventListener('click',logout,false)
   document.getElementById('openmenu').addEventListener('click',openMenu,false)
   document.getElementById('closemenu').addEventListener('click',closeMenu,false)
+  const navLinks = document.getElementsByClassName('nav-link')
+  _.each(navLinks,(link) => {
+    link.addEventListener('click',navLinkClick,false)
+  })
 }
 
 const initRouter = () => {
   routie({
     '': function() {
       mainpage()
-      checkMenuStatus()
     },
     'leaderboards': function() {
       leaderboards()
-      checkMenuStatus()
     }
   })
 }
@@ -68,6 +70,10 @@ const checkMenuStatus = (e) => {
       menu.classList.remove('open')
     }
   }
+}
+
+const navLinkClick = (e) => {
+  checkMenuStatus()
 }
 
 checkLogin()
