@@ -5,6 +5,7 @@
       <h1><%=round.name%></h1>
       <div class="matches">
         <% _.each(round.matches,function(match,j){ %>
+          <% var matchDone = match.score1 !== null && match.score2 !== null %>
           <div class="match">
             <% var infoClass = match.bet ? 'bet-given' : ''; %>
             <div class="container container--info-row <%=infoClass%>">

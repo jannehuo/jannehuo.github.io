@@ -3,9 +3,11 @@ const matchUrl = dev ? '../js/testData.json' : 'https://raw.githubusercontent.co
 import axios from 'axios'
 import render from '../utils/render.js'
 import matchlist from '../templates/matchlist.ejs'
+import moment from 'moment'
 let matchData;
 let playerScore = 0;
 let scoreList = []
+let currentDate;
 
 const points = {
   'match': 2,
@@ -83,6 +85,7 @@ const userBets = () => {
 
 const combineMatchData = (bets) => {
   let betsList;
+  currentDate = moment().utc(0)
   
   if(_.isArray(bets.matches)) {
     betsList = _.compact(bets.matches)
@@ -92,6 +95,8 @@ const combineMatchData = (bets) => {
   
   _.each(matchData.rounds,(round) => {
     _.each(round.matches,(match) => {
+      const matchDate = moment(`${match.date} ${match.time}`)
+      match.matchStarted = matchDate < currentDate
       _.each(betsList,(bet) => {
         if(parseInt(bet.num,10) === match.num) {
           match.bet = bet
@@ -99,6 +104,7 @@ const combineMatchData = (bets) => {
       })
     })
   })
+  console.log(matchData)
 }
 
 const showStatus = (success) => {
