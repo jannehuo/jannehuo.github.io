@@ -13,6 +13,8 @@ const points = {
 }
 
 export default () => {
+  playerScore = 0
+  scoreList = []
   loadMatchData()
 }
 

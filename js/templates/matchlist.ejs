@@ -5,6 +5,7 @@
       <h1><%=round.name%></h1>
       <div class="matches">
         <% _.each(round.matches,function(match,j){ %>
+          <% var matchEnded = match.score1 !== null && match.score2 !== null %>
           <div class="match">
             <% var infoClass = match.bet ? 'bet-given' : ''; %>
             <div class="container container--info-row <%=infoClass%>">
@@ -20,9 +21,21 @@
             </div>
             <form class='bettingform' data-match-index='<%=j%>' data-round-index='<%=i%>' data-match-num='<%=match.num%>'>
               <div class="container container--betting-row">
+                <% if(!matchEnded) { %>
                 <input type="number" data-team='<%=match.team1.code%>' name='bet1' value='<%=match.bet !== undefined ? match.bet.bet1 : ""%>'>
-                <div class="align-center padding-large-sides"><input type='submit' value='Add Bet' class="text-button" /></div>
-                <input type="number" data-team='<%=match.team2.code%>' name='bet2' value='<%=match.bet !== undefined ? match.bet.bet2 : ""%>'>
+                <% } else { %>
+                  <h2><%=match.bet.bet1%></h2>
+                <% } %>
+                <div class="align-center padding-large-sides">
+                  <% if(!matchEnded) { %>
+                    <input type='submit' value='Add Bet' class="text-button"/>
+                  <% } %>
+                </div>
+                <% if(!matchEnded) { %>
+                  <input type="number" data-team='<%=match.team2.code%>' name='bet2' value='<%=match.bet !== undefined ? match.bet.bet2 : ""%>'>
+                <% } else { %>
+                  <h2><%=match.bet.bet2%></h2>
+                <% } %>
               </div>
             </form>     
           </div>
