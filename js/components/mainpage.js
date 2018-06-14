@@ -165,6 +165,7 @@ const saveUserScore = (score) => {
       console.log(err)
     } else {
       document.getElementById('user-score').innerHTML = playerScore + ' P'
+      sessionStorage.setItem('scoresSaved','saved')
     }
   });
 }
