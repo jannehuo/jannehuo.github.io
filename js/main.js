@@ -5,26 +5,17 @@ import mainView from './templates/mainpage.ejs'
 import login from './components/login.js'
 import mainpage from './components/mainpage.js'
 import render from './utils/render.js'
+import init from './init.js'
+import leaderboards from './components/leaderboards.js';
 
-// Initialize Firebase
-const config = {
-  apiKey: "AIzaSyCvX-9BBppyTcO_x7B-s6bBlxSxCcAQtXA",
-  authDomain: "wc2018-be3df.firebaseapp.com",
-  databaseURL: "https://wc2018-be3df.firebaseio.com",
-  projectId: "wc2018-be3df",
-  storageBucket: "",
-  messagingSenderId: "436391509301"
-};
-firebase.initializeApp(config);
+init()
 
 const checkLogin = () => {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       sessionStorage.setItem('userid', user.uid)
-      render(document.getElementById('page'),mainView({
-        user:user
-      }));
-      mainpage()
+      renderPageContainer(user)
+      initRouter()
     } else {
       render(document.getElementById('page'),loginView());
       login()
@@ -32,6 +23,51 @@ const checkLogin = () => {
   });
 }
 
-window.onload = () => {
- checkLogin()
+const renderPageContainer = (user) => {
+  render(document.getElementById('page'),mainView({
+    user:user
+  }));
+  document.getElementById('logout').addEventListener('click',logout,false)
+  document.getElementById('openmenu').addEventListener('click',openMenu,false)
+  document.getElementById('closemenu').addEventListener('click',closeMenu,false)
 }
+
+const initRouter = () => {
+  routie({
+    '': function() {
+      mainpage()
+      checkMenuStatus()
+    },
+    'leaderboards': function() {
+      leaderboards()
+      checkMenuStatus()
+    }
+  })
+}
+
+const openMenu = (e) => {
+  document.getElementById('menu').classList.add('open')
+}
+
+const closeMenu = (e) => {
+  document.getElementById('menu').classList.remove('open')
+}
+
+const logout = (e) => {
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
+
+const checkMenuStatus = (e) => {
+  const menu = document.getElementById('menu')
+  if(menu) {
+    if(menu.classList.contains('open')) {
+      menu.classList.remove('open')
+    }
+  }
+}
+
+checkLogin()

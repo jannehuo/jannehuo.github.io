@@ -1,0 +1,16 @@
+<div class="leaderboard">
+  <%
+    _.each(data,function(user){
+  %>
+      <div class="leaderboard-names">
+        <div class="name">
+          <%=user.displayName%>
+        </div>
+        <div class="score">
+          <%=user.points%>
+        </div>
+      </div>
+  <%
+    });
+  %>
+</div>

@@ -14,7 +14,6 @@ const points = {
 
 export default () => {
   loadMatchData()
-  document.getElementById('logout').addEventListener('click',logout,false)
 }
 
 const loadMatchData = () => {
@@ -29,7 +28,6 @@ const loadMatchData = () => {
 }
 
 const renderMatchData = (data) => {
-  console.log(data)
   render(document.getElementById('matchlist'),matchlist({
     data:data
   }))
@@ -75,19 +73,23 @@ const addUserBet = (e) => {
 const userBets = () => {
   const uid = sessionStorage.getItem('userid')
   firebase.database().ref('bets/' + uid).once('value',(res) => {
-    combineMatchData(res.val())
+    if(res.val().matches) {
+      combineMatchData(res.val())
+    }
+    renderMatchData(matchData)
+    checkScores(matchData)
   })
 }
 
 const combineMatchData = (bets) => {
   let betsList;
+  
   if(_.isArray(bets.matches)) {
     betsList = _.compact(bets.matches)
   } else {
     betsList = _.values(bets.matches)
   }
   
-  console.log(betsList)
   _.each(matchData.rounds,(round) => {
     _.each(round.matches,(match) => {
       _.each(betsList,(bet) => {
@@ -97,16 +99,6 @@ const combineMatchData = (bets) => {
       })
     })
   })
-  renderMatchData(matchData)
-  checkScores(matchData)
-}
-
-const logout = (e) => {
-  firebase.auth().signOut().then(function() {
-    // Sign-out successful.
-  }).catch(function(error) {
-    // An error happened.
-  });
 }
 
 const showStatus = (success) => {
@@ -176,6 +168,8 @@ const saveUserScore = (score) => {
     }
   });
 }
+
+
 
 function checkQueryString(name) {
   name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

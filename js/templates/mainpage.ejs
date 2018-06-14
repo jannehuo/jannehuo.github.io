@@ -1,6 +1,16 @@
 <nav>
  <h2><%=user.displayName%></h2>
  <h2 id="user-score"></h2>
- <button class="text-button text-button--invert" id='logout'>Logout</button>
+ <button class="text-button text-button--invert" id='openmenu'>MENU</button>
 </nav>
 <div id="matchlist"></div>
+<div id="menu">
+  <button class="close-menu" id='closemenu'><i class="far fa-times-circle"></i></button>
+  <div class="menu-content">
+      <ul class="menu-links">
+        <li><a href="/#">Mainpage</a></li>
+        <li><a href="/#leaderboards">Leaderboard</a></li>
+        <li><a href="#" id='logout'>Logout</a></li>
+      </ul>
+  </div>
+</div>
