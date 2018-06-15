@@ -24,7 +24,7 @@
                 <% if(!matchEnded) { %>
                 <input type="number" data-team='<%=match.team1.code%>' name='bet1' value='<%=match.bet !== undefined ? match.bet.bet1 : ""%>'>
                 <% } else { %>
-                  <h2><%=match.bet.bet1%></h2>
+                  <h2><%=match.bet !== undefined ? match.bet.bet1 : ""%></h2>
                 <% } %>
                 <div class="align-center padding-large-sides">
                   <% if(!matchEnded) { %>
@@ -34,7 +34,7 @@
                 <% if(!matchEnded) { %>
                   <input type="number" data-team='<%=match.team2.code%>' name='bet2' value='<%=match.bet !== undefined ? match.bet.bet2 : ""%>'>
                 <% } else { %>
-                  <h2><%=match.bet.bet2%></h2>
+                  <h2><%=match.bet !== undefined ? match.bet.bet2 : ""%></h2>
                 <% } %>
               </div>
             </form>     

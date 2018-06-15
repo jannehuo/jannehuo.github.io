@@ -348,8 +348,8 @@
             "name": "England",
             "code": "ENG"
           },
-          "score1": null,
-          "score2": null,
+          "score1": 1,
+          "score2": 1,
           "score1i": null,
           "score2i": null,
           "group": "Group G",
