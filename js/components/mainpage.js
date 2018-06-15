@@ -7,7 +7,6 @@ import moment from 'moment'
 let matchData;
 let playerScore = 0;
 let scoreList = []
-let currentDate;
 
 const points = {
   'match': 2,
@@ -85,8 +84,6 @@ const userBets = () => {
 
 const combineMatchData = (bets) => {
   let betsList;
-  currentDate = moment().utc(0)
-  
   if(_.isArray(bets.matches)) {
     betsList = _.compact(bets.matches)
   } else {
@@ -95,8 +92,6 @@ const combineMatchData = (bets) => {
   
   _.each(matchData.rounds,(round) => {
     _.each(round.matches,(match) => {
-      const matchDate = moment(`${match.date} ${match.time}`)
-      match.matchStarted = matchDate < currentDate
       _.each(betsList,(bet) => {
         if(parseInt(bet.num,10) === match.num) {
           match.bet = bet
@@ -105,6 +100,23 @@ const combineMatchData = (bets) => {
     })
   })
   console.log(matchData)
+}
+
+const checkMatchStatus = () => {
+  _.each(matchData.rounds,(round) => {
+    _.each(round.matches,(match) => {
+      const currentDate = moment()
+      const matchDate = moment.utc(`${match.date} ${match.time}`)
+      let offsetVal = getOffsetValue(match.timezone)
+      match.matchStarted = matchDate < currentDate.utcOffset(offsetVal)
+      match.matchStarted = matchDate < currentDate
+    })
+  })
+}
+
+const getOffsetValue = (UTC) => {
+  const offsetValue = UTC.split('+')[1]
+  return parseInt(offsetValue,10)
 }
 
 const showStatus = (success) => {
