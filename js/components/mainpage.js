@@ -77,6 +77,7 @@ const userBets = () => {
     if(res.val().matches) {
       combineMatchData(res.val())
     }
+    checkMatchStatus()
     renderMatchData(matchData)
     checkScores(matchData)
   })
