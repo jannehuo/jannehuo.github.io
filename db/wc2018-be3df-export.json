@@ -1,5 +1,28 @@
 {
   "bets" : {
+    "1Vez1Xo5U9UZZ6NicFLQ7h3a9ud2" : {
+      "displayName" : "Ville Liimatainen",
+      "email" : "vliimatainen84@gmail.com",
+      "matches" : [ null, {
+        "bet1" : "2",
+        "bet2" : "0",
+        "num" : "1"
+      }, {
+        "bet1" : "1",
+        "bet2" : "2",
+        "num" : "2"
+      }, {
+        "bet1" : "0",
+        "bet2" : "0",
+        "num" : "3"
+      }, {
+        "bet1" : "1",
+        "bet2" : "2",
+        "num" : "4"
+      } ],
+      "points" : 2,
+      "userId" : "1Vez1Xo5U9UZZ6NicFLQ7h3a9ud2"
+    },
     "2zpBQ2oSTMbjhK36HdgSd4hHLDC3" : {
       "displayName" : "Jen Lee",
       "email" : "snowytrees182@gmail.com",
@@ -109,8 +132,14 @@
         "bet2" : "0",
         "num" : "18"
       } ],
-      "points" : 0,
+      "points" : 2,
       "userId" : "756Y4An6G1YWFvPnjANGd1HLW113"
+    },
+    "9PBc0kK7aMQfjS5al2HxfQ7taLR2" : {
+      "displayName" : "Tiina Keskitalo",
+      "email" : "tkkeski@gmail.com",
+      "points" : 0,
+      "userId" : "9PBc0kK7aMQfjS5al2HxfQ7taLR2"
     },
     "JIV34YwNEIblasF8R9SCB4A1zyr1" : {
       "displayName" : "Jack Barnard",
@@ -120,7 +149,7 @@
         "bet2" : "0",
         "num" : "1"
       }, {
-        "bet1" : "0",
+        "bet1" : "1",
         "bet2" : "2",
         "num" : "2"
       }, {
@@ -148,7 +177,7 @@
         "bet2" : "0",
         "num" : "8"
       } ],
-      "points" : 0,
+      "points" : 2,
       "userId" : "JIV34YwNEIblasF8R9SCB4A1zyr1"
     },
     "aTGNh5aPuYeMWFDyz5upeHVIhTg1" : {
@@ -158,6 +187,34 @@
         "bet1" : "0",
         "bet2" : "0",
         "num" : "1"
+      }, {
+        "bet1" : "0",
+        "bet2" : "0",
+        "num" : "2"
+      }, {
+        "bet1" : "2",
+        "bet2" : "3",
+        "num" : "3"
+      }, {
+        "bet1" : "1",
+        "bet2" : "1",
+        "num" : "4"
+      }, {
+        "bet1" : "0",
+        "bet2" : "1",
+        "num" : "5"
+      }, {
+        "bet1" : "2",
+        "bet2" : "2",
+        "num" : "6"
+      }, {
+        "bet1" : "1",
+        "bet2" : "2",
+        "num" : "7"
+      }, {
+        "bet1" : "1",
+        "bet2" : "1",
+        "num" : "8"
       } ],
       "points" : 0,
       "userId" : "aTGNh5aPuYeMWFDyz5upeHVIhTg1"
@@ -182,8 +239,43 @@
         "bet2" : "1",
         "num" : "4"
       } ],
-      "points" : 0,
+      "points" : 2,
       "userId" : "lL2EF2Rxw6VyH6crKIn2KJrNCs73"
+    },
+    "qje153EpcxcXUuq2DLcK3235Hav1" : {
+      "displayName" : "Kari Hiltunen",
+      "email" : "kjhiltun@gmail.com",
+      "matches" : [ null, null, {
+        "bet1" : "1",
+        "bet2" : "2",
+        "num" : "2"
+      }, {
+        "bet1" : "1",
+        "bet2" : "1",
+        "num" : "3"
+      }, {
+        "bet1" : "0",
+        "bet2" : "0",
+        "num" : "4"
+      }, {
+        "bet1" : "3",
+        "bet2" : "0",
+        "num" : "5"
+      }, {
+        "bet1" : "1",
+        "bet2" : "2",
+        "num" : "6"
+      }, {
+        "bet1" : "3",
+        "bet2" : "1",
+        "num" : "7"
+      }, {
+        "bet1" : "1",
+        "bet2" : "1",
+        "num" : "8"
+      } ],
+      "points" : 0,
+      "userId" : "qje153EpcxcXUuq2DLcK3235Hav1"
     },
     "x9Vn9BtppoY7xYmb0Nmrnw2zdmH3" : {
       "displayName" : "Janne H",
@@ -198,7 +290,7 @@
         "num" : "2"
       }, {
         "bet1" : "2",
-        "bet2" : "4",
+        "bet2" : "1",
         "num" : "3"
       }, {
         "bet1" : "2",
@@ -232,8 +324,16 @@
         "bet1" : "3",
         "bet2" : "2",
         "num" : "11"
+      }, {
+        "bet1" : "2",
+        "bet2" : "3",
+        "num" : "12"
+      }, {
+        "bet1" : "1",
+        "bet2" : "2",
+        "num" : "13"
       } ],
-      "points" : 0,
+      "points" : 2,
       "userId" : "x9Vn9BtppoY7xYmb0Nmrnw2zdmH3"
     }
   }
