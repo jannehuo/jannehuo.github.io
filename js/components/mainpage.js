@@ -3,6 +3,7 @@ const matchUrl = dev ? '../js/testData.json' : 'https://raw.githubusercontent.co
 import axios from 'axios'
 import render from '../utils/render.js'
 import matchlist from '../templates/matchlist.ejs'
+import firebase from 'firebase'
 let matchData;
 let playerScore = 0;
 let scoreList = []

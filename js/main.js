@@ -7,7 +7,7 @@ import mainpage from './components/mainpage.js'
 import render from './utils/render.js'
 import init from './init.js'
 import leaderboards from './components/leaderboards.js';
-
+import firebase from 'firebase'
 init()
 
 const checkLogin = () => {

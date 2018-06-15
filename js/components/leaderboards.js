@@ -1,5 +1,6 @@
 import render from '../utils/render.js'
 import leaderboards from '../templates/leaderboards.ejs'
+import firebase from 'firebase'
 
 export default () => {
   loadBetsData()
