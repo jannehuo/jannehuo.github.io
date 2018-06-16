@@ -51,9 +51,11 @@ const addUserBet = (e) => {
   let object = {
     num: matchnum
   };
-  formdata.forEach(function(value, key){
-    object[key] = value;
-  });
+
+  for (var entry of formdata.entries()) {
+    object[entry[0]] = entry[1]
+  }
+
   const uid = sessionStorage.getItem('userid')
   const emptyStrings = _.includes(_.values(object),"");
 
