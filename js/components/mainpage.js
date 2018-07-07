@@ -4,8 +4,9 @@ import axios from 'axios'
 import render from '../utils/render.js'
 import matchlist from '../templates/matchlist.ejs'
 import firebase from 'firebase'
+
 let matchData;
-let playerScore = 0;
+let playerScore = 0
 let scoreList = []
 
 const points = {
@@ -14,8 +15,6 @@ const points = {
 }
 
 export default () => {
-  playerScore = 0
-  scoreList = []
   loadMatchData()
 }
 
@@ -23,7 +22,7 @@ const loadMatchData = () => {
   axios.get(matchUrl)
   .then(function (response) {
     matchData = response.data
-    userBets()
+    userBets(true)
   })
   .catch(function (error) {
     console.log(error);
@@ -65,9 +64,7 @@ const addUserBet = (e) => {
         showStatus(false)
       } else {
         showStatus(true)
-        playerScore = 0;
-        scoreList = []
-        userBets()
+        userBets(false)
       }
     });
   }
@@ -75,14 +72,16 @@ const addUserBet = (e) => {
   return false;
 }
 
-const userBets = () => {
+const userBets = (updateScores) => {
   const uid = sessionStorage.getItem('userid')
   firebase.database().ref('bets/' + uid).once('value',(res) => {
     if(res.val().matches) {
       combineMatchData(res.val())
     }
     renderMatchData(matchData)
-    checkScores(matchData)
+    if(updateScores) {
+      checkScores(matchData)
+    }
   })
 }
 
@@ -119,6 +118,8 @@ const showStatus = (success) => {
 }
 
 const checkScores = (data) => {
+  playerScore = 0
+  scoreList = []
   _.each(data.rounds,(round) => {
     _.each(round.matches,(match) => {
       if(match.bet && match.score1 !== null && match.score2 !== null) {
