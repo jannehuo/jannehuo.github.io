@@ -1,5 +1,5 @@
 const dev = checkQueryString('dev');
-const matchUrl = dev ? '../js/testData.json' : 'https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.json'
+const matchUrl = dev ? '../js/testData.json' : '../js/data.json'
 import axios from 'axios'
 import render from '../utils/render.js'
 import matchlist from '../templates/matchlist.ejs'

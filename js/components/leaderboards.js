@@ -2,7 +2,7 @@ import render from '../utils/render.js'
 import leaderboards from '../templates/leaderboards.ejs'
 import firebase from 'firebase'
 import axios from 'axios'
-const matchUrl = 'https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.json'
+const matchUrl = '../js/data.json'
 
 let matchData;
 let playerScore = 0
