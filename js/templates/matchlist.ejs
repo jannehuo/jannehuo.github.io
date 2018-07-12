@@ -40,7 +40,9 @@
                 <% if(match.score1 !== null && match.score2 !== null) { %>
                   <div class='score-box'>
                     <div class="small-text">Match result</div>
-                    <h2 class="align-center"><%=match.score1 + ' - ' + match.score2%></h2>
+                    <h2 class="align-center">
+                      <span class="team1-score"><%=match.score1%></span> - <span class="team2-score"><%=match.score2%></span>
+                    </h2>
                     <div class="small-text">Your bet</div>
                     <h2 class="align-center"><%=match.bet !== undefined ? match.bet.bet1 : ""%> - <%=match.bet !== undefined ? match.bet.bet2 : ""%></h2>
                     <div class="small-text">Your score</div>
