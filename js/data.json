@@ -2913,13 +2913,59 @@
       {
         "name": "Match for third place",
         "matches": [
-  
+          {
+          "num": 63,
+          "date": "2018-07-14",
+          "time": "17:00",
+          "team1": {
+            "name": "Belgium",
+            "code": "BEL"
+          },
+          "team2": {
+            "name": "England",
+            "code": "ENG"
+          },
+          "score1": null,
+          "score2": null,
+          "score1i": null,
+          "score2i": null,
+          "group": "Group C",
+          "stadium": {
+            "key": "kazan",
+            "name": "Kazan Arena"
+          },
+          "city": "Kazan",
+          "timezone": "UTC+3"
+        }
         ]
       },
       {
         "name": "Final",
         "matches": [
-  
+          {
+          "num": 64,
+          "date": "2018-07-15",
+          "time": "18:00",
+          "team1": {
+            "name": "France",
+            "code": "FRA"
+          },
+          "team2": {
+            "name": "Croatia",
+            "code": "CRO"
+          },
+          "score1": null,
+          "score2": null,
+          "score1i": null,
+          "score2i": null,
+          "group": "Group C",
+          "stadium": {
+            "key": "kazan",
+            "name": "Kazan Arena"
+          },
+          "city": "Kazan",
+          "timezone": "UTC+3"
+        }
         ]
       }
     ]

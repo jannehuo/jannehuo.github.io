@@ -97,6 +97,20 @@ input {
     input[type='number'],div {
       width: 33.333%;
     }
+    &.result-row {
+      justify-content: center;
+      div {
+        width: 100%;
+      }
+    }
+  }
+  &--match-end {
+    margin: 20px 0;
+    justify-content: space-between;
+    align-items: center;
+    .team-name,.score-box {
+      width: 33.3333%;
+    }
   }
 }
 
@@ -271,4 +285,16 @@ input {
   .score {
     font-size: 1.5em;
   }
+}
+
+.score-box {
+  width: 33.333%;
+  text-align: center;
+  h2 {
+    width: 100%;
+  }
+}
+
+.small-text {
+  margin: 8px 0;
 }

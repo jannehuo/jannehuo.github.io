@@ -23,6 +23,7 @@ const loadMatchData = () => {
   .then(function (response) {
     matchData = response.data
     userBets(true)
+    //testScores()
   })
   .catch(function (error) {
     console.log(error);
@@ -74,10 +75,12 @@ const addUserBet = (e) => {
 
 const userBets = (updateScores) => {
   const uid = sessionStorage.getItem('userid')
+  //const uid = 'aTGNh5aPuYeMWFDyz5upeHVIhTg1'
   firebase.database().ref('bets/' + uid).once('value',(res) => {
     if(res.val().matches) {
       combineMatchData(res.val())
     }
+    addMatchScores(matchData)
     renderMatchData(matchData)
     if(updateScores) {
       checkScores(matchData)
@@ -133,19 +136,15 @@ const checkScores = (data) => {
 const checkBets = (match) => {
   if(match.score1 === match.score2 && convertToInt(match.bet.bet1) === convertToInt(match.bet.bet2)) {
     playerScore += points.match
-    scoreList.push(points.match)
     if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
       playerScore += points.score
-      scoreList.push(points.score)
-      return false;
     }
+    return false;
   }
   if(match.score1 > match.score2 && convertToInt(match.bet.bet1) > convertToInt(match.bet.bet2)) {
     playerScore += points.match
-    scoreList.push(points.match)
     if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
       playerScore += points.score
-      scoreList.push(points.score)
     }
     return false;
   }
@@ -154,7 +153,6 @@ const checkBets = (match) => {
     scoreList.push(points.match)
     if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
       playerScore += points.score
-      scoreList.push(points.score)
     }
     return false;
   }
@@ -174,6 +172,43 @@ const saveUserScore = (score) => {
       sessionStorage.setItem('scoresSaved','saved')
     }
   });
+}
+
+const addMatchScores = (data) => {
+  _.each(data.rounds,(round) => {
+    _.each(round.matches,(match) => {
+      if(match.bet && match.score1 !== null && match.score2 !== null) {
+        let playerScore = matchScores(match);
+        let matchScore = typeof playerScore === 'undefined' ? 0 : playerScore
+        match.userScore = matchScore
+      }
+    })
+  })
+}
+
+const matchScores = (match) => {
+  let matchScore = 0;
+  if(match.score1 === match.score2 && convertToInt(match.bet.bet1) === convertToInt(match.bet.bet2)) {
+    matchScore += points.match
+    if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
+      matchScore += points.score
+    }
+    return matchScore;
+  }
+  if(match.score1 > match.score2 && convertToInt(match.bet.bet1) > convertToInt(match.bet.bet2)) {
+    matchScore += points.match
+    if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
+      matchScore += points.score
+    }
+    return matchScore;
+  }
+  if(match.score2 > match.score1 && convertToInt(match.bet.bet2) > convertToInt(match.bet.bet1)) {
+    matchScore += points.match
+    if(match.score1 === convertToInt(match.bet.bet1) && match.score2 === convertToInt(match.bet.bet2)) {
+      matchScore += points.score
+    }
+    return matchScore;
+  }
 }
 
 
