@@ -111,6 +111,22 @@ input {
     .team-name,.score-box {
       width: 33.3333%;
     }
+    &[data-winner="team-1"] {
+      .team-1 {
+        color: cadetblue;
+      }
+      .team-2 {
+        color: darkred;
+      }
+    }
+    &[data-winner="team-2"] {
+      .team-2 {
+        color: cadetblue;
+      }
+      .team-1 {
+        color: darkred;
+      }
+    }
   }
 }
 

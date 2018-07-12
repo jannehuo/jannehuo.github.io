@@ -75,7 +75,7 @@ const addUserBet = (e) => {
 
 const userBets = (updateScores) => {
   const uid = sessionStorage.getItem('userid')
-  //const uid = 'aTGNh5aPuYeMWFDyz5upeHVIhTg1'
+  
   firebase.database().ref('bets/' + uid).once('value',(res) => {
     if(res.val().matches) {
       combineMatchData(res.val())

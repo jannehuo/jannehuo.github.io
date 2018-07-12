@@ -27,9 +27,15 @@
                 </div>
               </form>
             <% } else { %>
-              <div class="container container--match-end">
+              <%
+                var winner = '';
+                if(match.score1 !== match.score2) {
+                  winner = match.score1 > match.score2 ? 'team-1' : 'team-2';
+                }
+              %>
+              <div class="container container--match-end" data-winner="<%= winner %>">
                 <div class="team-name">
-                  <h2><%=match.team1.name%></h2>
+                  <h2 class="team-1"><%=match.team1.name%></h2>
                 </div>
                 <% if(match.score1 !== null && match.score2 !== null) { %>
                   <div class='score-box'>
@@ -44,7 +50,7 @@
                   </div>
                 <% } %>
                 <div class="team-name align-right">
-                  <h2><%=match.team2.name%></h2>
+                  <h2 class="team-2"><%=match.team2.name%></h2>
                 </div>
               </div>
             <% } %>     
