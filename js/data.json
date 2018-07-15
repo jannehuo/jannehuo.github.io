@@ -2954,8 +2954,8 @@
             "name": "Croatia",
             "code": "CRO"
           },
-          "score1": null,
-          "score2": null,
+          "score1": 4,
+          "score2": 2,
           "score1i": null,
           "score2i": null,
           "group": "Group C",
